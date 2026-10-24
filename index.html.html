@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Day for Nethmi 💌</title>
+<style>
+:root{--rose:#b84d70;--deep:#7d294d;--pink:#fff0f4;--cream:#fffaf8;--ink:#583744}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:linear-gradient(145deg,#fff8fa,#ffe5ed 55%,#fff8f1);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#d98ba5 1px,transparent 1px);background-size:22px 22px}
+main{position:relative;width:min(760px,92%);margin:35px auto;padding:clamp(20px,5vw,48px);background:rgba(255,255,255,.84);border:1px solid #f5c8d5;border-radius:28px;box-shadow:0 22px 70px #9b45651c;text-align:center}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font:600 11px Arial,sans-serif;color:var(--rose)}
+h1{font-size:clamp(36px,8vw,62px);line-height:1.03;color:var(--deep);margin:16px 0}
+.subtitle{font:16px/1.8 Arial,sans-serif;max-width:540px;margin:0 auto 25px;color:#76515e}
+.heart{font-size:36px;animation:pulse 1.8s infinite;display:inline-block}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.divider{color:#d58ba2;letter-spacing:7px;margin:22px 0}
+h2{font-size:25px;color:var(--deep);margin:14px 0}
+.section{margin:28px 0;text-align:left}
+.section>label,.field-label{display:block;font:700 13px Arial,sans-serif;color:var(--deep);margin-bottom:10px}
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.option{border:1px solid #f0c3d1;background:#fff9fb;border-radius:17px;padding:14px 9px;cursor:pointer;transition:.2s;text-align:center;min-height:130px;color:var(--ink);font-family:Arial,sans-serif}
+.option .emoji{display:block;font-size:29px;margin-bottom:9px}
+.option strong{display:block;font-size:14px;color:var(--deep);margin-bottom:5px}
+.option small{font-size:11px;line-height:1.4;color:#886a75}
+.option.selected{border:2px solid var(--rose);background:#ffe8ef;box-shadow:0 5px 17px #b84d7020;transform:translateY(-2px)}
+input[type=date],select,textarea{width:100%;padding:13px 14px;border:1px solid #edc2cf;border-radius:12px;background:#fffdfd;font:15px Arial,sans-serif;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--rose);box-shadow:0 0 0 3px #b84d701a}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{min-width:0}
+button{border:0;cursor:pointer;font:700 14px Arial,sans-serif;transition:.2s}
+.confirm{width:100%;margin-top:22px;padding:16px;border-radius:999px;background:linear-gradient(100deg,#b84d70,#8c3157);color:white;box-shadow:0 10px 25px #b84d7033}
+.confirm:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.note{font:12px/1.6 Arial,sans-serif;color:#967985;margin-top:13px}
+.result{display:none;margin-top:25px;padding:24px 18px;border-radius:18px;background:#fff0f4;border:1px dashed #d78ba4}
+.result h2{margin-top:0}
+.result p{font:15px/1.7 Arial,sans-serif}
+.result .bigheart{font-size:35px}
+footer{font:12px Arial,sans-serif;color:#a17c89;margin-top:25px}
+.sparkle{color:#d77f9c}
+@media(max-width:560px){main{margin:14px auto;padding:22px 16px}.options{grid-template-columns:1fr}.option{min-height:0;display:flex;align-items:center;text-align:left;gap:13px;padding:12px}.option .emoji{margin:0;font-size:30px;width:38px}.option small{display:block}.fields{grid-template-columns:1fr}.section{margin:23px 0}}
+</style>
+</head>
+<body>
+<main>
+  <div class="heart">♡</div>
+  <div class="eyebrow">A little surprise, made with love</div>
+  <h1>Nethmi<br>Kaushalya</h1>
+  <p class="subtitle">I have a tiny question for you, someone very special to me.<br>Will you go on a day out with me? 💌</p>
+  <div class="divider">✦ ♡ ✦</div>
+  <h2>Let's plan our little adventure</h2>
+  <p class="subtitle">You choose the date and the kind of day you'd love. I'll be happy just spending time with you. ❤️</p>
+
+  <form id="dateForm">
+    <div class="section">
+      <label>01 — Choose our date</label>
+      <input id="date" type="date" required>
+    </div>
+    <div class="section">
+      <label>02 — Pick your favourite date idea</label>
+      <div class="options" role="group" aria-label="Day out options">
+        <button type="button" class="option" data-choice="Kandy Trip" aria-pressed="false">
+          <span class="emoji">🌿</span><span><strong>Kandy Trip</strong><small>Scenic views, exploring & memories</small></span>
+        </button>
+        <button type="button" class="option" data-choice="Movie Date" aria-pressed="false">
+          <span class="emoji">🎬</span><span><strong>Movie Date</strong><small>A film, popcorn & time together</small></span>
+        </button>
+        <button type="button" class="option" data-choice="Shopping Date" aria-pressed="false">
+          <span class="emoji">🛍️</span><span><strong>Shopping Date</strong><small>Browse, shop & enjoy some treats</small></span>
+        </button>
+      </div>
+    </div>
+    <div class="section fields">
+      <div class="field">
+        <label for="time">03 — What time works?</label>
+        <select id="time" required>
+          <option value="">Choose a time</option>
+          <option>Morning</option><option>Afternoon</option><option>Evening</option><option>Any time works</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="extra">04 — A little note (optional)</label>
+        <input id="extra" type="text" maxlength="100" placeholder="Anything you'd love to do…">
+      </div>
+    </div>
+    <button class="confirm" type="submit">Send My Date Choice 💗</button>
+    <p class="note">Your choice will appear in a cute confirmation card. This page doesn't send anything online.</p>
+  </form>
+
+  <section class="result" id="result" aria-live="polite">
+    <div class="bigheart">💌</div>
+    <h2>It's a date, Nethmi!</h2>
+    <p id="summary"></p>
+    <p><strong>Can't wait to make lovely memories with you. ♡</strong></p>
+    <button type="button" class="confirm" id="share">Share this plan</button>
+    <p class="note" id="shareNote"></p>
+  </section>
+  <div class="divider">♡ · ♡ · ♡</div>
+  <p style="font-style:italic;color:#9b4b69;font-size:18px">“My favourite place is wherever I get to spend time with you.”</p>
+  <footer>Created especially for Nethmi Kaushalya • with love ♡</footer>
+</main>
+<script>
+const dateInput = document.getElementById('date');
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+dateInput.min = localToday;
+let selectedChoice = '';
+document.querySelectorAll('.option').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.option').forEach(item => {
+      item.classList.remove('selected');
+      item.setAttribute('aria-pressed','false');
+    });
+    button.classList.add('selected');
+    button.setAttribute('aria-pressed','true');
+    selectedChoice = button.dataset.choice;
+  });
+});
+document.getElementById('dateForm').addEventListener('submit', event => {
+  event.preventDefault();
+  if (!selectedChoice) {
+    alert('Pick the kind of date you would love first 💗');
+    return;
+  }
+  const chosenDate = new Date(dateInput.value + 'T12:00:00');
+  const formattedDate = chosenDate.toLocaleDateString(undefined, {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  const time = document.getElementById('time').value;
+  const extra = document.getElementById('extra').value.trim();
+  document.getElementById('summary').innerHTML =
+    'You chose <strong>' + selectedChoice + '</strong> for <strong>' + formattedDate +
+    '</strong>, in the <strong>' + time.toLowerCase() + '</strong>.' +
+    (extra ? '<br>Your little note: “' + escapeHtml(extra) + '”' : '');
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'});
+});
+function escapeHtml(text){return text.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.getElementById('share').addEventListener('click', async () => {
+  const summary = document.getElementById('summary').innerText;
+  const text = '💌 Our date plan for Nethmi Kaushalya\n' + summary + '\nCan’t wait to make lovely memories with you! ♡';
+  const note = document.getElementById('shareNote');
+  if (navigator.share) {
+    try { await navigator.share({title:'Our Date Plan 💗', text}); note.textContent=''; }
+    catch (e) { if (e.name !== 'AbortError') note.textContent='Sharing was not available. You can copy the plan text instead.'; }
+  } else if (navigator.clipboard && window.isSecureContext) {
+    try { await navigator.clipboard.writeText(text); note.textContent='Plan copied! You can paste it into a message. 💗'; }
+    catch (e) { note.textContent=text; }
+  } else {
+    note.textContent=text;
+  }
+});
+</script>
+</body>
+</html>
